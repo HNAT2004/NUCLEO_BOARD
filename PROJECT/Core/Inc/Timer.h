@@ -4,6 +4,7 @@
  *  Created on: Sep 21, 2024
  *      Author: ADMIN
  */
+#include "main.h"
 
 #ifndef INC_TIMER_H_
 #define INC_TIMER_H_
@@ -25,6 +26,13 @@ void timerRun(){
 			timer_flag[i] = 1;
 		}
 	}
+}
+int isTimerExpired(int index){
+	if (timer_flag[index] == 1){
+		timer_flag[index] = 0;
+		return 1;
+	}
+	return 0;
 }
 
 #endif /* INC_TIMER_H_ */
